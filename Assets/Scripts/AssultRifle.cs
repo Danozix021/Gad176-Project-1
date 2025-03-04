@@ -10,7 +10,7 @@ public class AssaultRifle : Weapons
     // Start is called before the first frame update
     new void Start()
     {
-        fireRate = 0.3f;
+        fireRate = 0.25f;
         base.Start();
     }
 

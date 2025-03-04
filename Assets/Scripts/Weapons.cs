@@ -38,10 +38,10 @@ public class Weapons : MonoBehaviour
                     Debug.Log("Enemy hit");
                     Enemies enemies = hit.collider.GetComponent<Enemies>();
                     enemies.OnHit();
-                    enemies.EnemyHealth -= 1;
-                    Debug.Log($"{enemies.EnemyHealth}");
+                    enemies.enemyHealth -= 1;
+                    Debug.Log($"{enemies.enemyHealth}");
                     
-                    if (enemies.EnemyHealth <= 0)
+                    if (enemies.enemyHealth <= 0)
                     {
                     enemies.Die();
                     }

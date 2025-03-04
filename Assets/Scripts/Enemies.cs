@@ -9,7 +9,9 @@ public class Enemies : MonoBehaviour
     public float EnemyMoveSpeed;
     public EnemyManager manager;
 
-    public int EnemyHealth;
+    public int enemyHealth;
+
+    protected GameObject player;
 
     public float hitDuration;
     public Color hitColor = Color.red;
@@ -28,7 +30,7 @@ public class Enemies : MonoBehaviour
 
         manager = FindObjectOfType<EnemyManager>();
 
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         if (player == null)
         {
             Debug.Log("NO PLAYER FOUND!!!");

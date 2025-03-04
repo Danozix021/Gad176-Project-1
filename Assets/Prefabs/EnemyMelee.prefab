@@ -123,7 +123,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerPosition: {fileID: 0}
   EnemyMoveSpeed: 5
+  manager: {fileID: 0}
   EnemyHealth: 0
+  hitDuration: 0
+  hitColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!54 &-6120856345422698395
 Rigidbody:
   m_ObjectHideFlags: 0

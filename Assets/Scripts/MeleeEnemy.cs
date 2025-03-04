@@ -7,7 +7,7 @@ public class MeleeEnemy : Enemies
     // Start is called before the first frame update
     new void Start()
     {
-        EnemyHealth = 10;
+        enemyHealth = 10;
         base.Start();
     }
 
