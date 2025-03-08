@@ -13,18 +13,6 @@ public class EnemyManager : MonoBehaviour
 
     public Transform[] spawnPoints;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void AddEnemyToList(Enemies enemy)
     {
         enemies.Add(enemy);

@@ -6,14 +6,13 @@ using UnityEngine;
 
 public class Enemies : MonoBehaviour
 {
-    public Transform PlayerPosition;
-    public float EnemyMoveSpeed;
-    public EnemyManager manager;
+    protected Transform PlayerPosition;
+    protected float EnemyMoveSpeed;
+    protected EnemyManager manager;
 
     public int enemyHealth;
 
     protected GameObject player;
-    public GameObject bulletPrefab;
 
     public float bulletSpeed = 10f;
     public float shootCooldown = 2f;
@@ -98,24 +97,8 @@ public class Enemies : MonoBehaviour
             enemyRenderer.material.color = originalColor;
         }
     }
-
-    protected virtual void ShootAtPlayer()
+    protected virtual void Attack()
     {
-        float playerHeadPosition = 1f;
-        Vector3 targetPosition = PlayerPosition.position + Vector3.up * playerHeadPosition;
-
-        Vector3 ShootDirection = (targetPosition - transform.position).normalized;
-
-        Quaternion bulletRotation = Quaternion.LookRotation(ShootDirection) * Quaternion.Euler(90f,0,0);
-        GameObject bullet = Instantiate(bulletPrefab, transform.position, bulletRotation);
-
-        Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        Collider bulletCollider = bullet.GetComponent<Collider>();
-        bulletCollider.isTrigger = true;
-
-        rb.velocity = ShootDirection * bulletSpeed;
-        rb.constraints = RigidbodyConstraints.FreezeRotation;
-
-        Destroy(bullet, 5f);
+        Debug.Log("Enemy Attacking");
     }
 }

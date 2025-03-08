@@ -6,7 +6,7 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
-    private int health;
+    [SerializeField]private int health;
 
     public GameObject pistol;
     public GameObject assaultRifle;
