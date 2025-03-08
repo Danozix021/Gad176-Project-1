@@ -11,18 +11,24 @@ public class EnemyRanged : Enemies
         stoppingDistance = 10f;
         enemyHealth = 5;
         base.Start();
+        shootTimer = shootCooldown;
     }
 
     // Update is called once per frame
     void Update()
     {
+        shootTimer -= Time.deltaTime;
         if (Vector3.Distance(transform.position, player.transform.position) > stoppingDistance)
         {
             MoveTowardsPlayer();
         }
         else
         {
-            Debug.Log("ranged attacking");
+            if (shootTimer <= 0)
+            {
+                ShootAtPlayer();
+                shootTimer = shootCooldown;
+            }
         }
     }
 }

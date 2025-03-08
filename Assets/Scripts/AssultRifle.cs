@@ -10,17 +10,23 @@ public class AssaultRifle : Weapons
     // Start is called before the first frame update
     new void Start()
     {
-        fireRate = 0.25f;
+        fireRate = 0.12f;
+        maxAmmo = 25;
+        ammoCount = maxAmmo;
         base.Start();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.Mouse0) && Time.time >= timeToFire)
+    new void Update()
         {
-            timeToFire = Time.time + fireRate;
-            Shoot();
+            if (Input.GetKey(KeyCode.Mouse0) && Time.time >= timeToFire && ammoCount > 0)
+            {
+                timeToFire = Time.time + fireRate;
+                Shoot();
+            }
+
+            Reload();
+            
+            base.Update(); 
         }
-    }
 }

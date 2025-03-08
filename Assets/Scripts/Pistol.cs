@@ -8,14 +8,20 @@ public class Pistol : Weapons
     new void Start()
     {
         base.Start();
+        maxAmmo = 7;
+        ammoCount = maxAmmo;
+        Debug.Log(ammoCount + "ammo");
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            Shoot();
+    new void Update()
+        {   
+            if (Input.GetKeyDown(KeyCode.Mouse0) && ammoCount > 0)
+            {
+                Shoot();
+            }
+
+            Reload();
+            base.Update();
         }
-    }
 }
